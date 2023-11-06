@@ -8,7 +8,7 @@ const initialState = {
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ],
 };
-export const contactsSlice = createSlice({
+export const sliceContacts = createSlice({
   name: 'contacts',
   initialState,
   reducers: {
@@ -22,7 +22,7 @@ export const contactsSlice = createSlice({
     },
   },
 });
-export const contactReducer = sliceContact.reducer;
+export const contactReducer = sliceContacts.reducer;
 
-export const { addContact, deleteContact } = sliceContact.actions;
+export const { addContact, deleteContact } = sliceContacts.actions;
 export const getContacts = state => state.contacts.contacts;
