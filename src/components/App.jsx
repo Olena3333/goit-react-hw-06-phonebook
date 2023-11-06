@@ -1,16 +1,24 @@
+import { StyledWrapper } from './App.styled';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <StyledWrapper>
+      <h1>Phonebook</h1>
+
+      <ContactForm
+        onAddContact={handleAddContact}
+        // contacts={contacts}
+      />
+      <h2>Contacts</h2>
+      <Filter filter={filter} onFilterChange={handelOnFilter} />
+      {contacts.length ? (
+        <ContactList
+          contacts={filterContact}
+          deletedContact={handleDeleteContact}
+        />
+      ) : (
+        <Notificatio message={'You have no contacts'} />
+      )}
+    </StyledWrapper>
   );
 };
