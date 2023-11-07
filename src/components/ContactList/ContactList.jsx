@@ -4,7 +4,6 @@ import { StyledButton } from 'components/App.styled';
 import { deleteContact, getContacts } from 'redux/sliceContacts';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFilter } from 'redux/sliseFilter';
-import { toast } from 'react-toastify';
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
