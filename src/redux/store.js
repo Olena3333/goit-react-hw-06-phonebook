@@ -12,7 +12,7 @@ import {
 import persistStore from 'redux-persist/es/persistStore';
 
 const { combineReducers, configureStore } = require('@reduxjs/toolkit');
-const { contactReducer, sliceContacts } = require('./sliceContacts');
+const { sliceContacts } = require('./sliceContacts');
 
 const persistConfig = {
   key: 'contacts',
