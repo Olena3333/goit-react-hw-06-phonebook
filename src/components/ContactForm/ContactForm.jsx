@@ -18,18 +18,17 @@ export const ContactForm = () => {
       number: event.currentTarget.elements.number.value,
     };
 
-    const isExist = contacts.find(
+    const repeat = contacts.find(
       ({ name }) => name.toLowerCase() === contact.name.toLowerCase()
     );
 
-    if (isExist) {
+    if (repeat) {
       return alert(`${contact.name} is already in contacts.`);
     }
 
     dispatch(addContact(contact));
     event.currentTarget.reset();
   };
-
   return (
     <StyledForm onSubmit={handelOnSubmit}>
       <label>
@@ -50,7 +49,11 @@ export const ContactForm = () => {
           required
         />
       </label>
-      <StyledButton disabled={!contact.name}>Add contact</StyledButton>
+      <StyledButton
+      // disabled={!contact.name}
+      >
+        Add contact
+      </StyledButton>
     </StyledForm>
   );
 };
