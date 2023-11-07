@@ -8,7 +8,6 @@ import { getContacts } from 'redux/sliceContacts';
 
 export const App = () => {
   const contacts = useSelector(getContacts);
-
   return (
     <StyledWrapper>
       <h1>Phonebook</h1>

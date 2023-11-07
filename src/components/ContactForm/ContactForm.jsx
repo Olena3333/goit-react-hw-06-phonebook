@@ -4,6 +4,7 @@ import { StyledButton } from 'components/App.styled';
 import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact, getContacts } from 'redux/sliceContacts';
+import { toast } from 'react-toastify';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -40,11 +41,11 @@ export const ContactForm = () => {
     const isDublicate = contacts.find(
       contact => contact.name === newContact.name
     );
-
     if (isDublicate) {
-      alert(`${newContact.name} is already in contacts.`);
+      toast.warning(`${newContact.name} is already in contacts.`);
     } else {
       dispatch(addContact(newContact));
+      toast.info(`${newContact.name} add`);
     }
   };
   return (
