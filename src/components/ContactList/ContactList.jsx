@@ -16,7 +16,6 @@ export const ContactList = () => {
 
   const onDeleteContact = id => {
     dispatch(deleteContact(id));
-    toast.info(`${contacts.name} is delete.`);
   };
 
   if (!filteredContacts.length) {
