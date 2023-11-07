@@ -11,11 +11,10 @@ export const ContactForm = () => {
 
   const handelOnSubmit = event => {
     event.preventDefault();
-
     const contact = {
-      id: nanoid(),
       name: event.currentTarget.elements.name.value,
       number: event.currentTarget.elements.number.value,
+      id: nanoid(),
     };
 
     const repeat = contacts.find(
@@ -25,7 +24,6 @@ export const ContactForm = () => {
     if (repeat) {
       return alert(`${contact.name} is already in contacts.`);
     }
-
     dispatch(addContact(contact));
     event.currentTarget.reset();
   };
